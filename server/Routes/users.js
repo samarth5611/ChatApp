@@ -11,6 +11,7 @@ const { valid } = require("joi");
 const router = express.Router();
 
 router.post("/register", async (req, res) => {
+  console.log(req.body);
   // checking the inputs using JOI
   const { error } = validateUser(req.body);
   if (error) return res.status(400).send(error.details[0].message);
@@ -23,37 +24,17 @@ router.post("/register", async (req, res) => {
   user = new User({
     name: req.body.name,
     email: req.body.email,
-    username: req.body.username,
     password: await bcrypt.hash(req.body.password, 10),
   });
 
+  console.log("here");
   try {
     await user.save();
     res.status(200).send("User Created !!!");
-    //     const token = jwt.sign(
-    //       { _id: user._id, isAdmin: user.isAdmin },
-    //       config.get("jwtPrivateKey")
-    //     );
-    //     res
-    //       .header("x-auth-token", token)
-    //       .header("access-control-expose-headers", "x-auth-token")
-    //       .send(_.pick(user, ["_id", "name", "email"]));
   } catch (err) {
     res.status(500).send(err);
   }
 });
-
-// router.get("/:id", async (req, res) => {
-//   const user = await User.findById(req.params.id).select("-password");
-//   if (!user) return res.send("this user does'nt exists in the database!");
-//   res.send(user);
-// });
-
-// router.get("/me", auth, async (req, res) => {
-//   const user = await User.findById(req.user._id).select("-password");
-//   if (!user) return res.send("this user does'nt exists in the database!");
-//   res.send(user);
-// });
 
 router.post("/login", async (req, res) => {
   console.log("in");
@@ -67,11 +48,7 @@ router.post("/login", async (req, res) => {
   if (!validpassword) return res.status(400).send("Invalid email or password");
   console.log("out");
 
-  console.log(process.env.TOKEN);
-  // res.send("Success");
-
-  const token = jwt.sign({ _id: user._id }, process.env.TOKEN);
-  res.header("x-auth-token").send(token);
+  res.send("Success");
 });
 
 router.post("/logout", async (req, res) => {});
