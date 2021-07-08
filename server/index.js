@@ -44,15 +44,10 @@ io.on("connection", (Socket) => {
   Socket.on("joinroom", ({ user, roomid }) => {
     const userx = userJoin(Socket.id, user, roomid);
     Socket.join(userx.room);
-    console.log(userx.room);
-    console.log(userx.username);
     io.to(userx.room).emit("intro-mssg", userx.username);
   });
 
   Socket.on("sendmssg", ({ user, currentMssg }) => {
-    console.log("HOOOOOOOOOOOo");
-    console.log(user);
-    console.log(currentMssg);
     io.emit("getmssg", { user, currentMssg });
   });
 });

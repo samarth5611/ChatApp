@@ -6,13 +6,13 @@ const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    minlength: 5,
+    minlength: 1,
     maxlength: 50,
   },
   email: {
     type: String,
     required: true,
-    minlength: 5,
+    minlength: 1,
     maxlength: 255,
     unique: true,
   },
@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     maxlength: 1024,
-    minlength: 5,
+    minlength: 1,
   },
 });
 const User = mongoose.model("User", userSchema);

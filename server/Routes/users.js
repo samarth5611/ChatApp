@@ -11,7 +11,6 @@ const { valid } = require("joi");
 const router = express.Router();
 
 router.post("/register", async (req, res) => {
-  console.log(req.body);
   // checking the inputs using JOI
   const { error } = validateUser(req.body);
   if (error) return res.status(400).send(error.details[0].message);
@@ -27,7 +26,6 @@ router.post("/register", async (req, res) => {
     password: await bcrypt.hash(req.body.password, 10),
   });
 
-  console.log("here");
   try {
     await user.save();
     res.status(200).send("User Created !!!");
