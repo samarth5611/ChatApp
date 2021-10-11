@@ -1,6 +1,6 @@
 # ChatApp
 
-ChatApp with User Authentication and user Room Features made using Node.js, Express.js, SocketIO, React.js and MongoDB
+ChatApp for messaging between Users. It has User Authentication and user Room Features made using Node.js, Express.js, SocketIO, React.js and MongoDB
 
 ## Features
 
@@ -16,6 +16,36 @@ ChatApp with User Authentication and user Room Features made using Node.js, Expr
 - Mongoose
 - React.js
 - SocketIO
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/samartha5611/ChatApp.git
+```
+
+Install dependencies
+
+```bash
+  cd client
+  npm install
+
+  cd server
+  npm install
+```
+
+Start the server
+
+```bash
+  cd client
+  npm Start
+
+  cd server
+  node index.js
+
+  open "http://localhost:3000/login"
+```
 
 ## Prototype
 
@@ -33,16 +63,10 @@ ChatApp with User Authentication and user Room Features made using Node.js, Expr
 
 ## About Me
 
-I'm Samartha,an undergraduate student studying Computer Science at IIIT, Gwalior with an Active interest in Competitive Programming and building Web Apps(MERN stack). I am always passionate about building websites and Mathematics.
+I'm Samartha,an undergraduate student studying Computer Science at IIIT, Gwalior with an Active interest in Competitive Programming and building Web Apps(MERN stack). Do checkout my portfolio and connect with me on LinkedIn.
 
 ### Connect with me :
 
-<div align="center">
-<a href="https://www.linkedin.com/in/samarth5611/">
-<img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg" target="_blank" height="50" width="50">
-</a>
-&nbsp;
-&nbsp;
-<a href="mailto:samarthajadhao5611@gmail.com" target="blank">
-<img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/gmail.svg" height="50" width="50">
-</a>
+[![gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:samarthajadhao5611@gmail.com)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/samarth5611/)
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://samartha5611.github.io/)
